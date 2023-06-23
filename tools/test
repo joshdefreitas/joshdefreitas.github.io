@@ -4,8 +4,6 @@
 #
 # Requirement: html-proofer, jekyll
 #
-# Usage: See help information
-
 set -eu
 
 SITE_DIR="_site"
