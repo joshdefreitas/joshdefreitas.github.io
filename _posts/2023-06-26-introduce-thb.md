@@ -22,17 +22,17 @@ Solving challenges on your own will be more rewarding 😤😤😤. Stay tuned f
 
 Each post in this series follows a three-part structure:
 
-##### 1. What do you need to solve a challenge? 📘
+1. **What do you need to solve a challenge? 📘**
 
-I will provide the necessary knowledge on what needs to be done to successfully solve it. Additionally, if there are any specific requirements or tools that are needed to complete the challenge, I will provide that information as well.
+   I will provide the necessary knowledge on what needs to be done to successfully solve it. Additionally, if there are any specific requirements or tools that are needed to complete the challenge, I will provide that information as well.
 
-##### 2. Helpful tips and notes to smoothly solve the challenge 💥
+2. **Helpful tips and notes to smoothly solve the challenge 💥**
 
-I'll share some tips and notes to assist you in approaching the challenge effectively and overcoming potential obstacles
+   I'll share some tips and notes to assist you in approaching the challenge effectively and overcoming potential obstacles
 
-##### 3. Flow to solve this challenge (image only) 🎯
+3. **Flow to solve this challenge (image only) 🎯**
 
-This will provide a visual representation of the process and help you better understand the overall structure and flow of the solution.
+   This will provide a visual representation of the process and help you better understand the overall structure and flow of the solution.
 
 ## Features of this series
 
