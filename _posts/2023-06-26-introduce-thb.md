@@ -8,11 +8,10 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: /assets/img/posts/HTB/htb.png
-  alt: Will change in future
+  path: /assets/img/posts/HTB/htb1.png
 ---
 
-## How I created this series?
+## Why I created this series?
 
 In this post, I'll be introducing the HTB series. HTB is a platform that helps improve skills in cybersecurity. I'll share my knowledge and insights from my experience with HTB. The series won't provide step-by-step guides for challenges, but it'll offer hints to keep you going.
 
@@ -22,17 +21,17 @@ Solving challenges on your own will be more rewarding 😤😤😤. Stay tuned f
 
 Each post in this series follows a three-part structure:
 
-1. **What do you need to solve a challenge? 📘**
+1. **What do you need to solve a challenge? 📖**
 
    I will provide the necessary knowledge on what needs to be done to successfully solve it. Additionally, if there are any specific requirements or tools that are needed to complete the challenge, I will provide that information as well.
 
-2. **Helpful tips and notes to smoothly solve the challenge 💥**
-
-   I'll share some tips and notes to assist you in approaching the challenge effectively and overcoming potential obstacles
-
-3. **Flow to solve this challenge (image only) 🎯**
+2. **Flow to solve this challenge 🎯**
 
    This will provide a visual representation of the process and help you better understand the overall structure and flow of the solution.
+
+3. **Helpful tips and notes to smoothly solve the challenge 💥**
+
+   I'll share some tips and notes to assist you in approaching the challenge effectively and overcoming potential obstacles
 
 ## Features of this series
 

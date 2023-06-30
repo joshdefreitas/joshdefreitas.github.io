@@ -3,13 +3,13 @@ title: Windows Privilege Escalation
 author: msplmee
 date: 2022-05-05 11:33:00 +0700
 categories: [Network Pentest, Privilege Escalation]
-tags: [windows, privesc]
+tags: [Windows, Privesc]
 pin: true
 math: true
 mermaid: true
-image:
-  path: /assets/img/posts/network_pentest/privesc_win.png
-  alt: Will change in future
+# image:
+#   path: /assets/img/posts/network_pentest/privesc_win.png
+#   alt:  Will updated in future
 ---
 
 ## Privilege Escalation Strategy

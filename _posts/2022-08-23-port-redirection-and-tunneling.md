@@ -3,13 +3,13 @@ title: Port Redirection and Tunneling
 author: nhott
 date: 2022-08-23 11:33:00 +0700
 categories: [Network Pentest, Post Exploitaion]
-tags: [tunneling]
-pin: true
+tags: [Tunneling]
+pin: false
 math: true
 mermaid: true
-image:
-  path: /assets/img/posts/network_pentest/port-forwarding.png
-  alt: Will change in future
+# image:
+#   path: /assets/img/posts/network_pentest/port-forwarding.png
+#   alt:  Will updated in future
 ---
 
 ## Port Forwarding

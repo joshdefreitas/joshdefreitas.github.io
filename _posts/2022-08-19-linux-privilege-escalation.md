@@ -3,13 +3,13 @@ title: Linux Privilege Escalation
 author: h40huynh
 date: 2022-08-19 11:33:00 +0700
 categories: [Network Pentest, Privilege Escalation]
-tags: [linux, privesc]
+tags: [Linux, Privesc]
 pin: true
 math: true
 mermaid: true
-image:
-  path: /assets/img/posts/network_pentest/privesc_linux.png
-  alt: Will change in future
+# image:
+#   path: /assets/img/posts/network_pentest/privesc_linux.png
+#   alt:  Will updated in future
 ---
 
 > **_NOTE:_** It is not always possible to escalate privileges to root, we have to escalate privileges to another non-root user, then escalate privileges to root

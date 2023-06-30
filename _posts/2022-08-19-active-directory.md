@@ -7,9 +7,9 @@ tags: [AD]
 pin: true
 math: true
 mermaid: true
-image:
-  path: /assets/img/posts/network_pentest/ad.png
-  alt: Will change in future
+# image:
+#   path: /assets/img/posts/network_pentest/ad.png
+#   alt:  Will updated in future
 ---
 
 ## Manually Enumeration
