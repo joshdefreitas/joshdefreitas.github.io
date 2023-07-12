@@ -8,12 +8,12 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: /assets/img/posts/HTB/htb1.png
+  path: /assets/img/posts/HTB/htb.png
 ---
 
 ## Why I created this series?
 
-In this post, I'll be introducing the HTB series. HTB is a platform that helps improve skills in cybersecurity. I'll share my knowledge and insights from my experience with HTB. The series won't provide step-by-step guides for challenges, but it'll offer hints to keep you going.
+In this post, I'll be introducing the HTB series. HTB is a platform that helps improve skills in cybersecurity. I'll share my knowledge and insights from my experience with HTB. The series won't provide step-by-step guides for challenges, but it'll offer hints to keep you going. Most articles are referenced from [0xdf hacks stuff](https://0xdf.gitlab.io/).
 
 Solving challenges on your own will be more rewarding 😤😤😤. Stay tuned for exciting updates on my blog about the HTB series!
 
