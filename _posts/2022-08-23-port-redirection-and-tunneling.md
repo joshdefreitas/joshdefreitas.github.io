@@ -4,12 +4,11 @@ author: nhott
 date: 2022-08-23 11:33:00 +0700
 categories: [Network Pentest, Post Exploitaion]
 tags: [Tunneling]
-pin: false
+pin: true
 math: true
 mermaid: true
-# image:
-#   path: /assets/img/posts/network_pentest/port-forwarding.png
-#   alt:  Will updated in future
+image:
+  path: /assets/img/posts/network_pentest/port-forwarding.png
 ---
 
 ## Port Forwarding

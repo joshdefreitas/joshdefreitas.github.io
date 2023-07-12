@@ -14,7 +14,7 @@ tags:
     OS Command Injection,
     Packet Capture Analysis
   ]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

@@ -7,9 +7,8 @@ tags: [Windows, Privesc]
 pin: true
 math: true
 mermaid: true
-# image:
-#   path: /assets/img/posts/network_pentest/privesc_win.png
-#   alt:  Will updated in future
+image:
+  path: /assets/img/posts/network_pentest/privesc_win.png
 ---
 
 ## Privilege Escalation Strategy

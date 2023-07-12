@@ -7,9 +7,8 @@ tags: [Linux, Privesc]
 pin: true
 math: true
 mermaid: true
-# image:
-#   path: /assets/img/posts/network_pentest/privesc_linux.png
-#   alt:  Will updated in future
+image:
+  path: /assets/img/posts/network_pentest/privesc_linux.png
 ---
 
 > **_NOTE:_** It is not always possible to escalate privileges to root, we have to escalate privileges to another non-root user, then escalate privileges to root
