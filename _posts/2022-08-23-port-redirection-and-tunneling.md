@@ -4,7 +4,7 @@ author: nhott
 date: 2022-08-23 11:33:00 +0700
 categories: [Network Pentest, Post Exploitaion]
 tags: [Tunneling]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

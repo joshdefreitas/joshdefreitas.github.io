@@ -4,7 +4,7 @@ author: msplmee
 date: 2023-06-26 09:23:00 +0700
 categories: [HTB]
 tags: [HTB]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

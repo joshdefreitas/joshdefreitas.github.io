@@ -4,7 +4,7 @@ author: msplmee
 date: 2022-05-05 11:33:00 +0700
 categories: [Network Pentest, Privilege Escalation]
 tags: [Windows, Privesc]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

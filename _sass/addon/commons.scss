@@ -337,6 +337,8 @@ i {
     min-width: 100%;
     overflow-x: auto;
     border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
 
     thead {
       border-bottom: solid 2px rgba(210, 215, 217, 0.75);
