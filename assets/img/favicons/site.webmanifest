@@ -10,12 +10,12 @@ layout: compress
   "description": "{{ site.description }}",
   "icons": [
     {
-      "src": "{{ favicon_path }}/agmaeuo.png",
+      "src": "{{ favicon_path }}/programmer.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "{{ favicon_path }}/agmaeuo.png",
+      "src": "{{ favicon_path }}/programmer.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }],
