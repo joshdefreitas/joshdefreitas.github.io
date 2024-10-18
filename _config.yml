@@ -81,7 +81,7 @@ theme_mode: dark
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/favicons/programmer.jpeg
+avatar: /assets/img/favicons/programmer.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -159,7 +159,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/img/agmaeuo.png
+      path: assets/img/programmer.jpg
     values:
       swcache: true
   - scope:
