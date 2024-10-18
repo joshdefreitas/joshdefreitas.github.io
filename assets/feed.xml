@@ -19,8 +19,8 @@ permalink: /feed.xml
     href="{{ '/' | absolute_url }}"/>
   <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
   <rights> © {{ 'now' | date: '%Y' }} {{ site.social.name }} </rights>
-  <icon>{{ site.baseurl }}/assets/img/favicons/agmaeuo-removebg.png</icon>
-  <logo>{{ site.baseurl }}/assets/img/favicons/agmaeuo-removebg.png</logo>
+  <icon>{{ site.baseurl }}/assets/img/favicons/programmer.jpg</icon>
+  <logo>{{ site.baseurl }}/assets/img/favicons/programmer.jpg</logo>
 
 {% for post in site.posts limit: 5 %}
   {% assign post_absolute_url = post.url | absolute_url %}
