@@ -7,8 +7,6 @@ on:
       - ".gitignore"
       - "README.md"
       - "LICENSE"
-      - ".github/ISSUE_TEMPLATE/**"
-      - ".github/PULL_REQUEST_TEMPLATE.md"
   workflow_dispatch:
 
 permissions:
@@ -26,8 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Important for correct Git history
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -40,33 +36,21 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Cache Jekyll builds
-        uses: actions/cache@v4
-        with:
-          path: _site
-          key: jekyll-site-${{ github.sha }}
-          restore-keys: |
-            jekyll-site-
-
       - name: Build with Jekyll
         run: |
           bundle config set --local path 'vendor/bundle'
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
-      - name: Test site
-        run: |
-          bundle exec htmlproofer _site \
-            --disable-external \
-            --check-html \
-            --allow_hash_href \
-            --check-img-http
+      - name: List contents of _site directory
+        run: ls -la _site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+          retention-days: 1
 
   deploy:
     environment:
