@@ -8,7 +8,7 @@ pin: false
 math: true
 mermaid: true
 image:
-  path: https://i.imgur.com/yVIVVNI.png
+  path: https://i.imgur.com/57IPv9g.png
 ---
 
 # Building a Kubernetes-Based Microservices Platform
