@@ -45,5 +45,5 @@ The platform follows a cloud-native microservices architecture. Here’s a high-
 
 Below is a visual representation of the architecture:
 
-![Architecture Diagram](/assets/img/posts/HTB/chaos/homelab-arch.png)
+![Architecture Diagram](https://i.imgur.com/yVIVVNI.png)
 
