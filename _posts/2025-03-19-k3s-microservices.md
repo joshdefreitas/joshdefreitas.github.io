@@ -31,11 +31,11 @@ Architecture Overview
 
 The platform follows a cloud-native microservices architecture. Here’s a high-level breakdown:
 
-**Kubernetes Cluster:** A multi-node cluster running k3s/k8s to manage containerized applications.
-**Service Mesh:** Istio or Linkerd handles service-to-service communication, traffic management, and security policies.
-**Observability:** Prometheus and Grafana provide real-time metrics.
-**CI/CD Automation:** ArgoCD/Flux automates application deployment and updates.
-**Chaos Engineering:** Chaos Mesh or Litmus tests system resilience by injecting controlled failures.
+- **Kubernetes Cluster:** A multi-node cluster running k3s/k8s to manage containerized applications.
+- **Service Mesh:** Istio or Linkerd handles service-to-service communication, traffic management, and security policies.
+- **Observability:** Prometheus and Grafana provide real-time metrics.
+- **CI/CD Automation:** ArgoCD/Flux automates application deployment and updates.
+- **Chaos Engineering:** Chaos Mesh or Litmus tests system resilience by injecting controlled failures.
 
 ### Architecture Diagram
 
