@@ -8,7 +8,7 @@ pin: false
 math: true
 mermaid: true
 image:
-  path: /assets/img/posts/HTB/chaos/homelab-arch.png
+  path: https://i.imgur.com/yVIVVNI.png
 ---
 
 # Building a Kubernetes-Based Microservices Platform
@@ -43,3 +43,8 @@ Below is a visual representation of the architecture:
 
 ![Architecture Diagram](https://i.imgur.com/yVIVVNI.png)
 
+## Implementation Details
+
+### 1. Setting Up Kubernetes Cluster
+
+I deployed a lightweight **k3s cluster** on a multi-node setup with a master node and two worker nodes.
