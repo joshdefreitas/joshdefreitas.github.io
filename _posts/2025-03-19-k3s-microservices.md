@@ -47,4 +47,26 @@ Below is a visual representation of the architecture:
 
 ### 1. Setting Up Kubernetes Cluster
 
-I deployed a lightweight **k3s cluster** on a multi-node setup with a master node and two worker nodes.
+I deployed a lightweight **k3s cluster** on a multi-node setup with a master node and two worker nodes. The lightweight nature of k3s made it perfect for this learning project without requiring extensive hardware resources.
+Setup steps included:
+
+- Installing k3s on the master node with `curl -sfL https://get.k3s.io | sh -`
+- Retrieving the node token from the master with `sudo cat /var/lib/rancher/k3s/server/token`
+- Joining worker nodes with `curl -sfL https://get.k3s.io | K3S_URL=https://<MASTER_IP>:6443 K3S_TOKEN=<TOKEN> sh -`
+
+I faced a few challenges during the setup, particularly with certificate authentication between nodes. The most common issue was token mismatch, which manifested as "token CA hash does not match the Cluster CA certificate hash" errors. Resolving this required using the correct token from /var/lib/rancher/k3s/server/token rather than from the node-token file.
+
+### 2. Core Platform Components
+
+After successfully setting up my k3s cluster, I needed to establish essential platform components. This phase focused on configuring access, deploying management tools, and setting up foundational services.
+
+#### Setting Up Local Access
+
+First, I needed to configure my local workstation to communicate with the cluster. Working directly from the control plane node quickly became cumbersome, especially when writing YAML manifests or running multiple commands.
+
+I copied the kubeconfig from the master node:
+
+```bash
+# From control plane node
+cat /etc/rancher/k3s/k3s.yaml
+```
