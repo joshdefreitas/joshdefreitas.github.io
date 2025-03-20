@@ -54,7 +54,7 @@ Setup steps included:
 - Retrieving the node token from the master with `sudo cat /var/lib/rancher/k3s/server/token`
 - Joining worker nodes with `curl -sfL https://get.k3s.io | K3S_URL=https://<MASTER_IP>:6443 K3S_TOKEN=<TOKEN> sh -`
 
-I faced a few challenges during the setup, particularly with certificate authentication between nodes. The most common issue was token mismatch, which manifested as "token CA hash does not match the Cluster CA certificate hash" errors. Resolving this required using the correct token from /var/lib/rancher/k3s/server/token rather than from the node-token file.
+I faced a few challenges during the setup, particularly with certificate authentication between nodes. The most common issue was token mismatch, which manifested as "token CA hash does not match the Cluster CA certificate hash" errors. Resolving this required using the correct token from /var/lib/rancher/k3s/server/token rather than from the node-token file. To easily connect to my nodes remotely I installed tailscale on each vm.
 
 ### 2. Core Platform Components
 
