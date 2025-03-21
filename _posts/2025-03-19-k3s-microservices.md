@@ -58,15 +58,30 @@ I faced a few challenges during the setup, particularly with certificate authent
 
 ### 2. Core Platform Components
 
-After successfully setting up my k3s cluster, I needed to establish essential platform components. This phase focused on configuring access, deploying management tools, and setting up foundational services.
-
 #### Setting Up Local Access
 
-First, I needed to configure my local workstation to communicate with the cluster. Working directly from the control plane node quickly became cumbersome, especially when writing YAML manifests or running multiple commands.
+After getting my K3s cluster up and running across my homelab nodes, I needed a way to manage it from my Windows workstation. This step was crucial because it meant I could administer the cluster without having to SSH into the nodes every time.
 
-I copied the kubeconfig from the master node:
+##### What I Did
 
-```bash
-# From control plane node
-cat /etc/rancher/k3s/k3s.yaml
-```
+I started by installing `kubectl` on my Windows machine by downloading it directly from kubernetes.io. After verifying the checksum (always a good security practice), I created the appropriate config file.
+
+The tricky part was getting the configuration right. I had to:
+- Create `~/.kube/config` file on Windows
+- Fix YAML formatting errors (those indentations are sensitive!)
+- Set `insecure-skip-tls-verify: true` to work with my Tailscale IP
+- Point the config to my K3s master node's Tailscale IP address
+
+When I ran `kubectl get nodes`, I could see all three nodes in my cluster responding properly - my master and two worker nodes.
+
+##### Dashboard Setup
+
+For easier visual management, I set up the Kubernetes dashboard by applying the official YAML manifest, creating an admin user, and generating an access token. After starting the proxy with `kubectl proxy`, I could access the full dashboard through my browser.
+
+#### Storage Configuration
+
+A quick check with `kubectl get storageclass` showed that K3s already had local-path storage configured as the default - perfect for my homelab needs and ready for deploying apps that need persistent storage.
+
+With these pieces in place, I now have complete control over my homelab Kubernetes cluster from my Windows machine, with both command-line and graphical options for management. This makes a solid foundation for the next phases of my project.
+
+### 3. Service Mesh (Istio)
