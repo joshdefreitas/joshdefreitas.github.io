@@ -90,26 +90,14 @@ With these pieces in place, I now have complete control over my homelab Kubernet
 After setting up my K3s cluster and configuring local access, the next step was adding a service mesh layer. I chose Istio for this because it provides enterprise-grade traffic management, security, and observability features without requiring changes to my applications.
 
 ##### Installing Istio Components
-I started by downloading the Istio command-line tool for Windows and adding it to my PATH. Then I installed Istio with a minimal profile to keep resource usage reasonable for my homelab:
+I started by downloading the Istio command-line tool for Windows and adding it to my PATH. Then I installed Istio with a minimal profile to keep resource usage reasonable for my homelab:`istioctl install --set profile=minimal --set values.pilot.resources.requests.memory=256Mi -y`
 
-```powershell
-istioctl install --set profile=minimal --set values.pilot.resources.requests.memory=256Mi -y
-```
-
-The minimal profile didn't include an ingress gateway by default, so I added that separately:
-
-```powershell
-istioctl install --set components.ingressGateways[0].name=istio-ingressgateway --set components.ingressGateways[0].enabled=true -y
-```
+The minimal profile didn't include an ingress gateway by default, so I added that separately:`istioctl install --set components.ingressGateways[0].name=istio-ingressgateway --set components.ingressGateways[0].enabled=true -y`
 
 A quick `kubectl get pods -n istio-system` confirmed that both istiod (the control plane) and the ingress gateway were up and running.
 
 ##### Enabling Automatic Sidecar Injection
-To get the full benefits of the mesh, I enabled automatic sidecar injection for the default namespace:
-
-```powershell
-kubectl label namespace default istio-injection=enabled
-```
+To get the full benefits of the mesh, I enabled automatic sidecar injection for the default namespace: `kubectl label namespace default istio-injection=enabled`
 
 This means any new pods I deploy will automatically get an Istio sidecar proxy without manual configuration - a huge time-saver.
 
@@ -129,4 +117,6 @@ With this service mesh layer in place, my homelab cluster now has capabilities t
 Here is a visual representation of all my services running in my istio namespace, as shown on my kubernetes dashboard:
 
 ![Kubernetes Dashboard](https://i.imgur.com/4LWiipo.png)
+
+### 4. CI/CD with GitOps
 
