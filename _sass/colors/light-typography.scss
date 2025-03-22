@@ -4,7 +4,7 @@
 
 @mixin light-scheme {
   /* Framework color */
-  --main-bg: rgb(237, 225, 186);
+  --main-bg: rgb(255, 255, 255);
   --mask-bg: #c1c3c5;
   --main-border-color: rgb(211, 173, 60, 0.5);
 
@@ -32,7 +32,7 @@
   );
 
   /* Sidebar */
-  --sidebar-bg: rgb(211, 173, 60);
+  --sidebar-bg: rgb(210,211,219);
   --sidebar-muted-color: #636363;
   --sidebar-active-color: #1d1d1d;
   --sidebar-hover-bg: rgb(227, 227, 227, 0.64);
@@ -41,7 +41,7 @@
   --avatar-border-color: rgb(237, 225, 186);
 
   /* Topbar */
-  --topbar-bg: rgb(237, 225, 186);
+  --topbar-bg: rgb(218, 218, 218);
   --topbar-text-color: #0c0c0c;
   --search-wrapper-border-color: rgb(211, 173, 60, 0.5);
   --search-tag-bg: #f8f9fa;
