@@ -125,3 +125,8 @@ kubectl apply -f kiali.yaml
 Now I can access Kiali for service mesh visualization, Grafana for dashboards, and Prometheus for metrics collection using simple port-forward commands when needed.
 
 With this service mesh layer in place, my homelab cluster now has capabilities that mirror what you'd find in production enterprise environments. I can implement advanced deployment strategies, secure service-to-service communication, and gain deep visibility into application traffic patterns.
+
+Here is a visual representation of all my services running in my istio namespace, as shown on my kubernetes dashboard:
+
+![Kubernetes Dashboard](https://i.imgur.com/4LWiipo.png)
+
