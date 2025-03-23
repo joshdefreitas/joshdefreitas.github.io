@@ -120,18 +120,21 @@ Here is a visual representation of all my services running in my istio namespace
 
 ## Phase 3: GitOps with ArgoCD
 
-After setting up my Kubernetes cluster, I implemented a GitOps workflow using ArgoCD and Istio. Here's what I did:
+After setting up my Kubernetes cluster, I implemented a GitOps workflow using ArgoCD. Here's what I did:
 
 1. Created a simple NGINX application with deployment and service manifests in my Git repository
+
+3. 1. Installed ArgoCD in its own namespace:
+   ```bash
+   kubectl create namespace argocd
+   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+   ```
 
 2. Configured ArgoCD to track and deploy my application:
    `kubectl patch application my-apps -n argocd --type=merge -p '{"spec":{"source":{"path":"apps/sample-app"}}}'`
 
-3. Set up Istio resources in a separate folder in my repo:
-
-    Gateway: Defines how traffic enters my cluster
-    VirtualService: Routes traffic to my service with path rewriting
-
+3. Set up an ArgoCD application to track and deploy my application:
+    `kubectl apply -f argocd-application.yaml -n argocd`
 
 4. Created a second ArgoCD application to manage Istio resources separately:
     `bashCopykubectl apply -f argocd-istio-application.yaml`
