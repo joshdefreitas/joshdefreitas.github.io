@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes-Based Microservices Platform w/ Service Mesh, Obeservability, CI/CD and GitOps"
+title: "Kubernetes-Based Platform w/ Service Mesh, Obeservability, CI/CD and GitOps"
 author: josh
 date: 2025-03-19 10:30:00 +0700
 categories: [Project, DevOps]
