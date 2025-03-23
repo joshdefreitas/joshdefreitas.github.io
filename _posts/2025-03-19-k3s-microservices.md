@@ -13,7 +13,7 @@ image:
 
 # Building a Kubernetes-Based Microservices Platform
 
-## Introduction
+# Introduction
 
 As part of my journey into cloud-native development and site reliability engineering (SRE), I built a Kubernetes-based microservices platform. This project focused on container orchestration, service discovery, traffic management, observability, and resilience engineering. The key components included:
 
@@ -25,7 +25,7 @@ As part of my journey into cloud-native development and site reliability enginee
 
 This blog post outlines the architecture, implementation, and key learnings from this project.
 
-## Architecture Overview
+# Architecture Overview
 
 Architecture Overview
 
@@ -43,9 +43,9 @@ Below is a visual representation of the architecture:
 
 ![Architecture Diagram](https://i.imgur.com/yVIVVNI.png)
 
-## Implementation Details
+# Implementation Details
 
-### 1. Setting Up Kubernetes Cluster
+## 1. Setting Up Kubernetes Cluster
 
 I deployed a lightweight **k3s cluster** on a multi-node setup with a master node and two worker nodes. The lightweight nature of k3s made it perfect for this learning project without requiring extensive hardware resources.
 Setup steps included:
@@ -56,13 +56,13 @@ Setup steps included:
 
 I faced a few challenges during the setup, particularly with certificate authentication between nodes. The most common issue was token mismatch, which manifested as "token CA hash does not match the Cluster CA certificate hash" errors. Resolving this required using the correct token from /var/lib/rancher/k3s/server/token rather than from the node-token file. To easily connect to my nodes remotely I installed tailscale on each vm.
 
-### 2. Core Platform Components
+## 2. Core Platform Components
 
-#### Setting Up Local Access
+### Setting Up Local Access
 
 After getting my K3s cluster up and running across my homelab nodes, I needed a way to manage it from my Windows workstation. This step was crucial because it meant I could administer the cluster without having to SSH into the nodes every time.
 
-##### What I Did
+#### What I Did
 
 I started by installing `kubectl` on my Windows machine by downloading it directly from kubernetes.io. After verifying the checksum (always a good security practice), I created the appropriate config file.
 
@@ -74,34 +74,34 @@ The tricky part was getting the configuration right. I had to:
 
 When I ran `kubectl get nodes`, I could see all three nodes in my cluster responding properly - my master and two worker nodes.
 
-##### Dashboard Setup
+#### Dashboard Setup
 
 For easier visual management, I set up the Kubernetes dashboard by applying the official YAML manifest, creating an admin user, and generating an access token. After starting the proxy with `kubectl proxy`, I could access the full dashboard through my browser.
 
-#### Storage Configuration
+### Storage Configuration
 
 A quick check with `kubectl get storageclass` showed that K3s already had local-path storage configured as the default - perfect for my homelab needs and ready for deploying apps that need persistent storage.
 
 With these pieces in place, I now have complete control over my homelab Kubernetes cluster from my Windows machine, with both command-line and graphical options for management. This makes a solid foundation for the next phases of my project.
 
-### 3. Service Mesh (Istio) + Obervability Stack
+## 3. Service Mesh (Istio) + Obervability Stack
 
-#### Installing the Service Mesh
+### Installing the Service Mesh
 After setting up my K3s cluster and configuring local access, the next step was adding a service mesh layer. I chose Istio for this because it provides enterprise-grade traffic management, security, and observability features without requiring changes to my applications.
 
-##### Installing Istio Components
+#### Installing Istio Components
 I started by downloading the Istio command-line tool for Windows and adding it to my PATH. Then I installed Istio with a minimal profile to keep resource usage reasonable for my homelab:`istioctl install --set profile=minimal --set values.pilot.resources.requests.memory=256Mi -y`
 
 The minimal profile didn't include an ingress gateway by default, so I added that separately:`istioctl install --set components.ingressGateways[0].name=istio-ingressgateway --set components.ingressGateways[0].enabled=true -y`
 
 A quick `kubectl get pods -n istio-system` confirmed that both istiod (the control plane) and the ingress gateway were up and running.
 
-##### Enabling Automatic Sidecar Injection
+#### Enabling Automatic Sidecar Injection
 To get the full benefits of the mesh, I enabled automatic sidecar injection for the default namespace: `kubectl label namespace default istio-injection=enabled`
 
 This means any new pods I deploy will automatically get an Istio sidecar proxy without manual configuration - a huge time-saver.
 
-#### Observability Stack
+### Observability Stack
 One of the biggest advantages of a service mesh is the visibility it provides. I set up a complete observability stack by installing:
 
 ```powershell
@@ -118,7 +118,7 @@ Here is a visual representation of all my services running in my istio namespace
 
 ![Kubernetes Dashboard](https://i.imgur.com/4LWiipo.png)
 
-### Phase 3: GitOps with ArgoCD
+## Phase 3: GitOps with ArgoCD
 
 After setting up my Kubernetes cluster, I implemented a GitOps workflow using ArgoCD and Istio. Here's what I did:
 
@@ -147,4 +147,4 @@ Here is a representation of my deployment in ArgoCD dashboard:
 
 ![Argo Dashboard](https://i.imgur.com/PUQsdfG.png)
 
-### Phase 4: Deploy Sample Microservices
+## Phase 4: Deploy Sample Microservices
