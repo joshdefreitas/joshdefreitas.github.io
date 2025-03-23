@@ -118,7 +118,7 @@ Here is a visual representation of all my services running in my istio namespace
 
 ![Kubernetes Dashboard](https://i.imgur.com/4LWiipo.png)
 
-## Phase 3: GitOps with ArgoCD
+## 3: GitOps with ArgoCD
 
 After setting up my Kubernetes cluster, I implemented a GitOps workflow using ArgoCD and Istio. Here's what I did:
 
@@ -147,4 +147,4 @@ Here is a representation of my deployment in ArgoCD dashboard:
 
 ![Argo Dashboard](https://i.imgur.com/PUQsdfG.png)
 
-## Phase 4: Deploy Sample Microservices
+## 4: Deploy Sample Microservices
