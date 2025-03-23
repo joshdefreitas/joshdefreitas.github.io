@@ -45,7 +45,7 @@ Below is a visual representation of the architecture:
 
 # Implementation Details
 
-## 1. Setting Up Kubernetes Cluster
+## Phase 1. Setting Up Kubernetes Cluster
 
 I deployed a lightweight **k3s cluster** on a multi-node setup with a master node and two worker nodes. The lightweight nature of k3s made it perfect for this learning project without requiring extensive hardware resources.
 Setup steps included:
@@ -56,7 +56,7 @@ Setup steps included:
 
 I faced a few challenges during the setup, particularly with certificate authentication between nodes. The most common issue was token mismatch, which manifested as "token CA hash does not match the Cluster CA certificate hash" errors. Resolving this required using the correct token from /var/lib/rancher/k3s/server/token rather than from the node-token file. To easily connect to my nodes remotely I installed tailscale on each vm.
 
-## 2. Core Platform Components
+## Phase 2. Core Platform Components
 
 ### Setting Up Local Access
 
@@ -84,7 +84,7 @@ A quick check with `kubectl get storageclass` showed that K3s already had local-
 
 With these pieces in place, I now have complete control over my homelab Kubernetes cluster from my Windows machine, with both command-line and graphical options for management. This makes a solid foundation for the next phases of my project.
 
-## 3. Service Mesh (Istio) + Obervability Stack
+## Phase 3. Service Mesh (Istio) + Obervability Stack
 
 ### Installing the Service Mesh
 After setting up my K3s cluster and configuring local access, the next step was adding a service mesh layer. I chose Istio for this because it provides enterprise-grade traffic management, security, and observability features without requiring changes to my applications.
@@ -118,7 +118,7 @@ Here is a visual representation of all my services running in my istio namespace
 
 ![Kubernetes Dashboard](https://i.imgur.com/4LWiipo.png)
 
-## 3: GitOps with ArgoCD
+## Phase 3: GitOps with ArgoCD
 
 After setting up my Kubernetes cluster, I implemented a GitOps workflow using ArgoCD and Istio. Here's what I did:
 
@@ -147,4 +147,4 @@ Here is a representation of my deployment in ArgoCD dashboard:
 
 ![Argo Dashboard](https://i.imgur.com/PUQsdfG.png)
 
-## 4: Deploy Sample Microservices
+## Phase 4: Deploy Sample Microservices
