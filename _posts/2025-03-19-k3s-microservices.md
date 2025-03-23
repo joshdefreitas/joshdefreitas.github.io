@@ -148,4 +148,4 @@ Here is a representation of my deployment in ArgoCD dashboard:
 
 ![Argo Dashboard](https://i.imgur.com/PUQsdfG.png)
 
-Phase 6: Deploy Sample Microservices
+## Phase 4: Deploy Sample Microservices
