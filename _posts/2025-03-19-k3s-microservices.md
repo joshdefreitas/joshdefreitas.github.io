@@ -125,22 +125,21 @@ After setting up my Kubernetes cluster, I implemented a GitOps workflow using Ar
 1. Created a simple NGINX application with deployment and service manifests in my Git repository
 
 2. Configured ArgoCD to track and deploy my application:
-   ```bash
-   kubectl patch application my-apps -n argocd --type=merge -p '{"spec":{"source":{"path":"apps/sample-app"}}}'
+   `kubectl patch application my-apps -n argocd --type=merge -p '{"spec":{"source":{"path":"apps/sample-app"}}}'`
 
-Set up Istio resources in a separate folder in my repo:
+3. Set up Istio resources in a separate folder in my repo:
 
-Gateway: Defines how traffic enters my cluster
-VirtualService: Routes traffic to my service with path rewriting
+    Gateway: Defines how traffic enters my cluster
+    VirtualService: Routes traffic to my service with path rewriting
 
 
-Created a second ArgoCD application to manage Istio resources separately:
-bashCopykubectl apply -f argocd-istio-application.yaml
+4. Created a second ArgoCD application to manage Istio resources separately:
+    `bashCopykubectl apply -f argocd-istio-application.yaml`
 
-Enabled Istio sidecar injection and restarted my deployment:
-bashCopykubectl label namespace default istio-injection=enabled
+5. Enabled Istio sidecar injection and restarted my deployment:
+    `bashCopykubectl label namespace default istio-injection=enabled`
 
-Accessed my application through the Istio gateway: http://192.168.1.31/sample-app
+6. Accessed my application through the Istio gateway: http://master-node-ip/sample-app
 
 The key benefit of this approach is separation of concerns - my application configs and networking configs are tracked separately in Git but deployed automatically by ArgoCD. When I push changes to either repo, ArgoCD automatically syncs them to my cluster, following true GitOps principles.
 
