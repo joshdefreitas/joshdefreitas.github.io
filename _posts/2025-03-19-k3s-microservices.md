@@ -118,5 +118,34 @@ Here is a visual representation of all my services running in my istio namespace
 
 ![Kubernetes Dashboard](https://i.imgur.com/4LWiipo.png)
 
-### 4. CI/CD with GitOps
+## Phase 3: GitOps with ArgoCD
 
+After setting up my Kubernetes cluster, I implemented a GitOps workflow using ArgoCD and Istio. Here's what I did:
+
+1. Created a simple NGINX application with deployment and service manifests in my Git repository
+
+2. Configured ArgoCD to track and deploy my application:
+   ```bash
+   kubectl patch application my-apps -n argocd --type=merge -p '{"spec":{"source":{"path":"apps/sample-app"}}}'
+
+Set up Istio resources in a separate folder in my repo:
+
+Gateway: Defines how traffic enters my cluster
+VirtualService: Routes traffic to my service with path rewriting
+
+
+Created a second ArgoCD application to manage Istio resources separately:
+bashCopykubectl apply -f argocd-istio-application.yaml
+
+Enabled Istio sidecar injection and restarted my deployment:
+bashCopykubectl label namespace default istio-injection=enabled
+
+Accessed my application through the Istio gateway: http://192.168.1.31/sample-app
+
+The key benefit of this approach is separation of concerns - my application configs and networking configs are tracked separately in Git but deployed automatically by ArgoCD. When I push changes to either repo, ArgoCD automatically syncs them to my cluster, following true GitOps principles.
+
+Here is a representation of my deployment in ArgoCD dashboard:
+
+![Argo Dashboard](https://i.imgur.com/PUQsdfG.png)
+
+Phase 6: Deploy Sample Microservices
