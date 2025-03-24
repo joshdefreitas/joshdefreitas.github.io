@@ -11,8 +11,6 @@ image:
   path: https://i.imgur.com/57IPv9g.png
 ---
 
-# Building an End to End Kubernetes-Based Microservices Platform w/ Service Mesh, Obeservability, CI/CD and GitOps PART 1
-
 ## Introduction
 
 As part of my journey into cloud-native development and site reliability engineering (SRE), I built a Kubernetes-based microservices platform. This project focused on container orchestration, service discovery, traffic management, observability, and resilience engineering. The key components included:
