@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes-Based Platform w/ Service Mesh, Obeservability, CI/CD and GitOps"
+title: "Kubernetes-Based Platform w/ Service Mesh, Obeservability, CI/CD and GitOps PART 1"
 author: josh
 date: 2025-03-19 10:30:00 +0700
 categories: [Project, DevOps]
@@ -11,7 +11,7 @@ image:
   path: https://i.imgur.com/57IPv9g.png
 ---
 
-# Building an End to End Kubernetes-Based Microservices Platform w/ Service Mesh, Obeservability, CI/CD and GitOps
+# Building an End to End Kubernetes-Based Microservices Platform w/ Service Mesh, Obeservability, CI/CD and GitOps PART 1
 
 ## Introduction
 
@@ -150,4 +150,17 @@ Here is a representation of my deployment in ArgoCD dashboard:
 
 ![Argo Dashboard](https://i.imgur.com/PUQsdfG.png)
 
-## Phase 4: Deploy Sample Microservices
+## Wrapping Up and What I've Learned
+
+Looking back at what I've built so far, I'm pretty happy with my progress. I started with just a few VMs and turned them into a working Kubernetes platform with all the essentials:
+
+1. **K3s Cluster**: Got a multi-node Kubernetes setup running across my homelab machines
+2. **Service Mesh**: Added Istio to handle how my services talk to each other
+3. **Monitoring Tools**: Set up Prometheus, Grafana, and Kiali so I can see what's happening in my cluster
+4. **GitOps**: Used ArgoCD to automatically deploy my apps from Git
+
+The journey taught me a lot. I learned how to troubleshoot node connections, configure kubectl from my Windows machine, and understand how a service mesh actually works in practice. The most challenging part was probably getting the Istio configuration right - those YAML files can be tricky!
+
+I also discovered that setting up the infrastructure is just the beginning. The real power comes when you start deploying actual applications on top of it.
+
+If you want to see what I did next with this platform, check out [Part 2 of this series](/posts/kubernetes-platform-part2) where I deploy some real applications and push the platform further.
